@@ -1,0 +1,22 @@
+SRC := $(wildcard *.tex)
+PDF := $(SRC:.tex=.pdf)
+DVI := $(SRC:.tex=.dvi)
+LOG := $(SRC:.tex=.log)
+AUX := $(SRC:.tex=.aux)
+
+all: ${PDF}
+
+%.dvi: %.tex
+	platex $<
+
+%.pdf: %.dvi
+	dvipdfmx $<
+
+debug:
+	@echo ${SRC}
+	@echo ${DVI}
+	@echo ${PDF}
+
+clean:
+	rm -f ${DVI} ${PDF} ${LOG} ${AUX}
+ 
