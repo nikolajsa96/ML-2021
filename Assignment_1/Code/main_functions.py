@@ -1,3 +1,3 @@
 import numpy as np
 
-data = np.load('../Assignment_1/Data/MNIST-5-6-Subset.zip')
+data = np.loadtxt('../Assignment_1/Code/hello.txt')
